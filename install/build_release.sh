@@ -115,8 +115,8 @@ if $build_debug; then
 fi
 package="$(echo "${outdir}"/mod-pagespeed-*.${PKG_EXTENSION})"
 
-echo "Testing $package"
-sudo $run_in_chroot install/test_package.sh $verbose_flag "$package"
+#echo "Testing $package"
+#sudo $run_in_chroot install/test_package.sh $verbose_flag "$package"
 
 if $build_psol; then
   debug=
