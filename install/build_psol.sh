@@ -70,7 +70,7 @@ fi
 # Using a subshell to contain the cd.
 mps_root=$PWD
 (cd pagespeed/automatic && \
-  run_with_log ../../log/psol_automatic_build.log \
+  #run_with_log ../../log/psol_automatic_build.log \
   make "${MAKE_ARGS[@]}" MOD_PAGESPEED_ROOT=$mps_root \
   CXXFLAGS="-DSERF_HTTPS_FETCHING=1" all)
 
