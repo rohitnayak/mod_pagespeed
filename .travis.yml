@@ -33,7 +33,7 @@ script:
   # for longer, but has the downside of not producing output if we timeout. See:
   # https://docs.travis-ci.com/user/common-build-problems/#Build-times-out-because-no-output-was-received
   # For now, stick with --verbose and keep an eye on the logs.
-  - install/build_release.sh --verbose --skip_psol --debug $BIT_FLAG
+  - install/build_release.sh --verbose --debug $BIT_FLAG
 
 notifications:
   email:
