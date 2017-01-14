@@ -24,8 +24,8 @@ build_type=Release
 package_channel=beta
 package_type=
 log_verbose=
-run_tests=true
-run_extcache_tests=true
+run_tests=false
+run_extcache_tests=false
 
 options="$(getopt --long build_deb,build_rpm,debug,release \
   --long skip_extcache_tests,skip_tests,stable_package,verbose \
