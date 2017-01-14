@@ -22,6 +22,7 @@ build_psol=true
 build_mps_args=(--build_$PKG_EXTENSION)
 build_stable=false
 verbose=false
+install_packages=false
 
 options="$(getopt --long 32bit,debug,skip_psol,stable,verbose -o '' -- "$@")"
 eval set -- "$options"
@@ -99,9 +100,12 @@ if $build_stable; then
   build_mps_args+=(--stable_package)
 fi
 
-sudo $run_in_chroot \
-  install/run_with_log.sh $log_verbose log/install_packages.log \
-    install/install_required_packages.sh --additional_dev_packages
+if $install_packages then
+  sudo $run_in_chroot \
+    install/run_with_log.sh $log_verbose log/install_packages.log \
+      install/install_required_packages.sh --additional_dev_packages
+fi
+
 $run_in_chroot install/build_mps.sh "${build_mps_args[@]}"
 
 verbose_flag=
