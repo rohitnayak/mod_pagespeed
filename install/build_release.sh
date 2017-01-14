@@ -100,7 +100,7 @@ if $build_stable; then
   build_mps_args+=(--stable_package)
 fi
 
-if $install_packages then
+if $install_packages; then
   sudo $run_in_chroot \
     install/run_with_log.sh $log_verbose log/install_packages.log \
       install/install_required_packages.sh --additional_dev_packages
