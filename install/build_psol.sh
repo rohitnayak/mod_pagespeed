@@ -22,8 +22,8 @@ cd $(dirname "$BASH_SOURCE")/..
 source install/build_env.sh || exit 1
 
 buildtype=Release
-install_deps=true
-run_tests=true
+install_deps=false
+run_tests=false
 run_packaging=true
 
 eval set -- "$(getopt --long debug,skip_deps,skip_packaging,skip_tests \
